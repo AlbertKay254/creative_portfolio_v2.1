@@ -99,7 +99,11 @@ export const cases = [
       { src: local('mockup-cupbap-cup.png'), title: 'CupBap cup', year: '2025' },
       { src: local('mockup-cupbap-bag.png'), title: 'CupBap paper bag', year: '2025' },
       { src: local('mockup-cupbap-box.png'), title: 'CupBap box', year: '2025' },
-      { src: local('mockup-matzip-cup.png'), title: 'Matzip cup', year: '2025' }
+      { src: local('mockup-matzip-cup.png'), title: 'Matzip cup', year: '2025' },
+      { src: local('poster-haru-open.webp'), title: 'Haru — We are open', year: '2025', ratio: '4 / 5' },
+      { src: local('poster-koreagarden-flavour.webp'), title: 'Korea Garden — Big flavour', year: '2025', ratio: '4 / 5' },
+      { src: local('poster-koreagarden-sizzle.webp'), title: 'Korea Garden — Sizzle & Steam', year: '2025', ratio: '4 / 5' },
+      { src: local('poster-koreagarden-somek-combo.png'), title: 'Korea Garden — Somek chicken combo', year: '2025', ratio: '1 / 1.414' }
     ]
   },
   {
