@@ -8,6 +8,7 @@ import Lightbox from '@/components/Lightbox';
 import {
   profile, marquee, stats, studio, featured, archive, skills, tools, timeline, shows, links
 } from '@/data/content';
+import { Analytics } from "@vercel/analytics/next"
 
 const Scene = dynamic(() => import('@/components/Scene'), { ssr: false });
 
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <>
+      <Analytics />
       <Scene />
       <div className="grain" aria-hidden="true" />
 
