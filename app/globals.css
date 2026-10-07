@@ -165,6 +165,16 @@ input, textarea, button { font: inherit; }
 .case-step { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: 8px 24px; padding: 20px 0; border-top: 1px solid var(--line); }
 .case-step dt { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
 .case-step dd { grid-column: span 2; margin: 0; min-width: 0; font-size: 16.5px; line-height: 1.6; color: var(--ink-3); text-wrap: pretty; }
+.subtabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 clamp(24px, 3vw, 38px); }
+.subtab {
+  padding: 10px 20px; border-radius: 999px; border: 1px solid var(--line); background: transparent;
+  color: #c8c6c0; font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.subtab:hover { border-color: var(--accent); color: var(--ink); }
+.subtab[aria-selected='true'] { border-color: var(--accent); color: var(--accent); }
+.case-download { display: inline-block; margin-top: 30px; }
+.case-download span { margin-left: 12px; opacity: 0.6; font-size: 0.85em; }
 .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: clamp(10px, 1.4vw, 16px); }
 .shot { padding: 0; border: 1px solid var(--line); border-radius: 16px; background: var(--bg); cursor: pointer; overflow: hidden; }
 .shot:hover { border-color: var(--accent); }

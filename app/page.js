@@ -9,6 +9,7 @@ import {
   profile, marquee, stats, studio, featured, archive, skills, tools, timeline, shows, links
 } from '@/data/content';
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const Scene = dynamic(() => import('@/components/Scene'), { ssr: false });
 
@@ -118,7 +119,12 @@ export default function Home() {
               </div>
               <div className="reel-actions">
                 <p>{p.blurb}</p>
-                <button className="btn btn-ghost" onClick={() => setLightbox(p)}>View full size</button>
+                <div className="btn-row">
+                  <button className="btn btn-ghost" onClick={() => setLightbox(p)}>View full size</button>
+                  {p.download && (
+                    <a className="btn" href={p.download.href} download>{p.download.label} ↓</a>
+                  )}
+                </div>
               </div>
             </div>
           </article>

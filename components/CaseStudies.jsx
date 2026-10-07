@@ -5,7 +5,9 @@ import { cases } from '@/data/content';
 
 export default function CaseStudies({ onOpen }) {
   const [tab, setTab] = useState(0);
-  const active = cases[tab];
+  const [project, setProject] = useState(0);
+  const group = cases[tab];
+  const active = group.projects ? group.projects[project] : group;
 
   return (
     <section id="case" className="section section--alt">
@@ -31,12 +33,31 @@ export default function CaseStudies({ onOpen }) {
               className="tab"
               role="tab"
               aria-selected={i === tab}
-              onClick={() => setTab(i)}
+              onClick={() => {
+                setTab(i);
+                setProject(0);
+              }}
             >
               {`0${i + 1}`} · {c.label}
             </button>
           ))}
         </div>
+
+        {group.projects && (
+          <div className="subtabs" role="tablist" aria-label={`${group.label} projects`}>
+            {group.projects.map((p, i) => (
+              <button
+                key={p.name}
+                className="subtab"
+                role="tab"
+                aria-selected={i === project}
+                onClick={() => setProject(i)}
+              >
+                {p.name}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className="case-grid">
           <div>
@@ -50,6 +71,12 @@ export default function CaseStudies({ onOpen }) {
                 </div>
               ))}
             </dl>
+            {active.download && (
+              <a className="btn case-download" href={active.download.href} download>
+                {active.download.label} ↓
+                <span>{active.download.size}</span>
+              </a>
+            )}
           </div>
 
           <div className="shots">

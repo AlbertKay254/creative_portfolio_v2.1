@@ -30,6 +30,12 @@ export const studio = [
   'Clients include CHAK, Swap Circle and PixxelArt Studios — from hospital information-system interfaces to a full mall brand guideline. Work shown at Ardhi Gallery (2023) and the Pawa254 Exhibition (2024).'
 ];
 
+const angelsGuide = {
+  href: '/brand/abtc-brand-guidelines-bloom.pdf',
+  label: 'Download full guideline',
+  size: 'PDF · 15 MB'
+};
+
 export const featured = [
   {
     no: '01', title: 'Ruaka Mall', year: '2025', tag: 'Branding & identity',
@@ -37,17 +43,23 @@ export const featured = [
     blurb: 'Logo, brand guidelines, signage and sixteen product mockups for a proposed Nairobi retail development.'
   },
   {
-    no: '02', title: 'Typography', year: '2025', tag: 'Type design',
+    no: '02', title: 'Angels Beauty', year: '2026', tag: 'Brand guidelines',
+    src: local('angels-01.webp'),
+    blurb: 'The Bloom identity for Angels Beauty Training Centre — logo suite, tangerine-and-teal palette, voice and applications for a KOICA IBS partnership project.',
+    download: angelsGuide
+  },
+  {
+    no: '03', title: 'Typography', year: '2025', tag: 'Type design',
     src: remote('type2.jpg'),
     blurb: 'A typographic study on hierarchy, rhythm and tension — letterforms doing the heavy lifting.'
   },
   {
-    no: '03', title: 'Joan of Arc', year: '2024', tag: 'Digital design',
+    no: '04', title: 'Joan of Arc', year: '2024', tag: 'Digital design',
     src: remote('joan1.png'),
     blurb: 'Composite digital portraiture: layered imagery, texture and text fused into one narrative frame.'
   },
   {
-    no: '04', title: 'Eclipse', year: '2025', tag: 'Photo manipulation',
+    no: '05', title: 'Eclipse', year: '2025', tag: 'Photo manipulation',
     src: remote('ECLIPSE_.jpg'),
     blurb: 'Retouching and manipulation pushed until the photograph becomes an object rather than a record.'
   }
@@ -71,6 +83,15 @@ const ruakaSlides = [
   ['ruaka-10.webp', 'Stationery'], ['ruaka-11.webp', 'Shopping bags'], ['ruaka-12.webp', 'Signage in situ']
 ].map(([file, label]) => ({
   src: local(file), title: `Ruaka Shopping Mall — ${label}`, year: '2025', ratio: '16 / 9', tile: '#E9E9E9'
+}));
+
+const angelsSlides = [
+  ['angels-01.webp', 'Cover · Your glow-up starts here'], ['angels-02.png', 'The brand at a glance'],
+  ['angels-03.png', 'The curriculum'], ['angels-04.png', 'Logo variations'],
+  ['angels-05.png', 'Peacock Teal & colour system'], ['angels-06.png', 'Voice & messaging'],
+  ['angels-07.png', 'Banner application']
+].map(([file, label]) => ({
+  src: local(file), title: `Angels Beauty Training Centre — ${label}`, year: '2026', ratio: '1055 / 815', tile: '#FFFBF3'
 }));
 
 export const cases = [
@@ -122,15 +143,32 @@ export const cases = [
     ]
   },
   {
-    label: 'Branding', title: 'Ruaka Shopping Mall',
-    blurb: 'A full brand identity for a modern retail and lifestyle destination in Ruaka — mark, palette, typography, guidelines and applications, now installed on the building itself.',
-    steps: [
-      { k: 'Brief', d: 'PixxelArt needed a complete, proposal-ready identity for a mall serving Ruaka and its fast-growing surrounding neighbourhoods.' },
-      { k: 'Mark', d: 'A stylised "R" in Azure Mist on Strawberry Red — clean, modern, energetic, and legible down to 64 × 64 pixels.' },
-      { k: 'System', d: 'Strawberry Red, Azure Mist, Onyx, Grapefruit Pink and Graphite, set in Open Sans with Alatsi as secondary, plus clear-space, minimum-size and misuse rules.' },
-      { k: 'Applications', d: 'Guidelines extended into t-shirts, stationery and staff IDs, shopping bags, and the fascia signage now standing at the mall.' }
-    ],
-    shots: ruakaSlides
+    label: 'Branding',
+    projects: [
+      {
+        name: 'Ruaka Mall', title: 'Ruaka Shopping Mall',
+        blurb: 'A full brand identity for a modern retail and lifestyle destination in Ruaka — mark, palette, typography, guidelines and applications, now installed on the building itself.',
+        steps: [
+          { k: 'Brief', d: 'PixxelArt needed a complete, proposal-ready identity for a mall serving Ruaka and its fast-growing surrounding neighbourhoods.' },
+          { k: 'Mark', d: 'A stylised "R" in Azure Mist on Strawberry Red — clean, modern, energetic, and legible down to 64 × 64 pixels.' },
+          { k: 'System', d: 'Strawberry Red, Azure Mist, Onyx, Grapefruit Pink and Graphite, set in Open Sans with Alatsi as secondary, plus clear-space, minimum-size and misuse rules.' },
+          { k: 'Applications', d: 'Guidelines extended into t-shirts, stationery and staff IDs, shopping bags, and the fascia signage now standing at the mall.' }
+        ],
+        shots: ruakaSlides
+      },
+      {
+        name: 'Angels Beauty', title: 'Angels Beauty Training Centre',
+        blurb: 'Bloom — a warm, career-first identity for a beauty school that takes women from dreamer to career woman. Logo suite, colour, type, voice and applications in one guideline.',
+        steps: [
+          { k: 'Brief', d: 'A KOICA IBS partnership project: give ABTC a brand that feels aspirational yet credible, and speaks to students woman-to-woman — never as "beneficiaries".' },
+          { k: 'Mark', d: 'A single-line profile inside an open circle, signed A·B·T·C — delivered in thin and bold gradient, solid orange, emblem and secondary lockups.' },
+          { k: 'System', d: 'A mango → tangerine → coral signature gradient on Cloud Ivory and Plum Ink, with Peacock Teal as the sparing complementary accent and AA/AAA contrast pairings.' },
+          { k: 'Voice', d: '"Learn it. Earn it. Glow." — short, confident lines, a curriculum system for hair, nails, skincare and spa, and banner applications built from it.' }
+        ],
+        shots: angelsSlides,
+        download: angelsGuide
+      }
+    ]
   }
 ];
 
