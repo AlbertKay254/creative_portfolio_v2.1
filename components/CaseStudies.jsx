@@ -16,13 +16,13 @@ export default function CaseStudies({ onOpen }) {
           <div>
             <p className="eyebrow" style={{ margin: '0 0 18px' }}>03 — Case studies</p>
             <h2 className="h2">
-              Four ways
+              Five ways
               <br />
               in
             </h2>
           </div>
           <p style={{ margin: 0, maxWidth: '46ch', fontSize: 'clamp(15px,1.3vw,18px)', lineHeight: 1.6, color: '#c8c6c0' }}>
-            Posters, packaging, marks. Pick a discipline and see how the work gets made — from brief to print-ready artwork.
+            Posters, packaging, marks, brands, records. Pick a discipline and see how the work gets made — from brief to print-ready artwork.
           </p>
         </div>
 
@@ -76,6 +76,15 @@ export default function CaseStudies({ onOpen }) {
                 {active.download.label} ↓
                 <span>{active.download.size}</span>
               </a>
+            )}
+            {active.links && (
+              <div className="btn-row" style={{ marginTop: 30 }}>
+                {active.links.map((l) => (
+                  <a className="btn btn-ghost" key={l.href} href={l.href} target="_blank" rel="noreferrer">
+                    {l.label} ↗
+                  </a>
+                ))}
+              </div>
             )}
           </div>
 

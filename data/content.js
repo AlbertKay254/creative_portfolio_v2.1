@@ -49,9 +49,9 @@ export const featured = [
     download: angelsGuide
   },
   {
-    no: '03', title: 'Typography', year: '2025', tag: 'Type design',
-    src: remote('type2.jpg'),
-    blurb: 'A typographic study on hierarchy, rhythm and tension — letterforms doing the heavy lifting.'
+    no: '03', title: 'Laterno', year: '2026', tag: 'Album art',
+    src: local('laterno-album.webp'),
+    blurb: 'Cover art for an alternative indie rock band — painted hibiscus pushed through halftone grain, the visual twin of shoegaze haze and 90s post-grunge fuzz.'
   },
   {
     no: '04', title: 'Joan of Arc', year: '2024', tag: 'Digital design',
@@ -168,6 +168,23 @@ export const cases = [
         shots: angelsSlides,
         download: angelsGuide
       }
+    ]
+  },
+  {
+    label: 'Album art', title: 'Laterno',
+    blurb: 'Cover art for Laterno, an alternative indie rock band blending shoegaze atmospheres, dreamy reverbs and 1990s post-grunge echoes.',
+    steps: [
+      { k: 'Brief', d: 'Give the record a cover that sounds like the band looks — hazy, warm and a little worn — and a companion cover for the singles.' },
+      { k: 'Approach', d: 'Painted hibiscus blooms, crushed through halftone and film grain so the image blurs like a wall of reverb: soft pink against near-black.' },
+      { k: 'Result', d: 'A singles cover cropped tight into one flower, and a final album cover that opens out into the full cluster — one family across every release.' }
+    ],
+    shots: [
+      { src: local('laterno-album.webp'), title: 'Laterno — album cover', year: '2026' },
+      { src: local('laterno-single.webp'), title: 'Laterno — singles cover', year: '2026' }
+    ],
+    links: [
+      { label: 'Instagram', href: 'https://www.instagram.com/laternoband/' },
+      { label: 'Linktree', href: 'https://linktr.ee/laterno' }
     ]
   }
 ];
