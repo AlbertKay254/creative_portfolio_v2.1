@@ -209,7 +209,7 @@ export const timeline = [
     what: 'Front-end UI/UX and visual modules for a Hospital Management Information System, plus posters, reports and infographics translating health data into clear communication.'
   },
   {
-    when: '2025 — 2026', role: 'Graphic Designer', org: 'YoungToon',
+    when: '2026  ', role: 'Graphic Designer', org: 'YoungToon',
     what: 'Manhwa typesetting — dialogue bubbles, spacing and placement that guide the reader’s eye — alongside brand visuals and mockups.'
   },
   {
@@ -217,11 +217,11 @@ export const timeline = [
     what: 'Logo, brand guidelines and product mockups for the proposed Ruaka Shopping Mall.'
   },
   {
-    when: '2022 — 2026', role: 'Graphic Designer', org: 'Swap Circle',
+    when: '2022 — Present', role: 'Graphic Designer', org: 'Swap Circle',
     what: 'Promotional posters and event photo editing that lifted turnout and sharpened the organisation’s presence.'
   },
   {
-    when: '2020 — 2022', role: 'Independent Projects', org: 'Freelance',
+    when: '2020 — Present', role: 'Independent Projects', org: 'Freelance',
     what: 'Self-taught Photoshop and Illustrator mastery through logos, social graphics and digital illustration.'
   }
 ];
@@ -236,5 +236,5 @@ export const links = [
   { label: 'Phone', value: '+254 702 519 938', href: 'tel:+254702519938' },
   { label: 'Instagram', value: '@lucid.craft_', href: 'https://www.instagram.com/lucid.craft_/' },
   { label: 'Behance', value: 'albertkay_', href: 'https://www.behance.net/albertkay_' },
-  { label: 'Kaleido', value: 'kaleido.art/links/alberKay', href: 'https://www.kaleido.art/links/alberKay' }
+  // { label: 'Kaleido', value: 'kaleido.art/links/alberKay', href: 'https://www.kaleido.art/links/alberKay' }
 ];
