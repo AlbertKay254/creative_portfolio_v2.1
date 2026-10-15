@@ -5,6 +5,7 @@ import { useState } from 'react';
 import useReveal from '@/components/useReveal';
 import CaseStudies from '@/components/CaseStudies';
 import Lightbox from '@/components/Lightbox';
+import ThemeToggle from '@/components/ThemeToggle';
 import {
   profile, marquee, stats, studio, featured, archive, skills, tools, timeline, shows, links
 } from '@/data/content';
@@ -34,6 +35,7 @@ export default function Home() {
           <a href="#case">Case studies</a>
           <a href="#studio">Studio</a>
           <a className="nav-cta" href="#contact">Hire me</a>
+          <ThemeToggle />
         </div>
       </nav>
 
@@ -258,7 +260,7 @@ export default function Home() {
 
       <footer>
         <span>© 2026 Albert Kaimenyi — Nairobi, Kenya</span>
-        <a href={profile.cv} download style={{ color: '#a9a9b4' }}>Download CV ↓</a>
+        <a href={profile.cv} download style={{ color: 'var(--ink-4)' }}>Download CV ↓</a>
       </footer>
 
       <Lightbox item={lightbox} onClose={() => setLightbox(null)} />

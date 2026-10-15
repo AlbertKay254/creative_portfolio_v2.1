@@ -21,7 +21,7 @@ export default function CaseStudies({ onOpen }) {
               in
             </h2>
           </div>
-          <p style={{ margin: 0, maxWidth: '46ch', fontSize: 'clamp(15px,1.3vw,18px)', lineHeight: 1.6, color: '#c8c6c0' }}>
+          <p style={{ margin: 0, maxWidth: '46ch', fontSize: 'clamp(15px,1.3vw,18px)', lineHeight: 1.6, color: 'var(--ink-body)' }}>
             Posters, packaging, marks, brands, records. Pick a discipline and see how the work gets made — from brief to print-ready artwork.
           </p>
         </div>

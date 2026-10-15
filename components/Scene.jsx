@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -26,6 +26,20 @@ function useWindowMotion() {
       window.removeEventListener('scroll', onScroll);
     };
   }, []);
+}
+
+/* Tracks the html[data-theme] attribute set by ThemeToggle. */
+function useIsLight() {
+  const [light, setLight] = useState(false);
+  useEffect(() => {
+    const root = document.documentElement;
+    const sync = () => setLight(root.dataset.theme === 'light');
+    sync();
+    const obs = new MutationObserver(sync);
+    obs.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => obs.disconnect();
+  }, []);
+  return light;
 }
 
 const COMMON = /* glsl */ `
@@ -95,7 +109,7 @@ function useSharedUniforms(accent) {
   );
 }
 
-function Sculpture({ intensity, accent }) {
+function Sculpture({ intensity, accent, light }) {
   const knot = useRef();
   const blob = useRef();
   const dust = useRef();
@@ -179,13 +193,15 @@ function Sculpture({ intensity, accent }) {
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" count={dustPositions.length / 3} array={dustPositions} itemSize={3} />
         </bufferGeometry>
+        {/* additive white specks vanish on a light page, so swap to normal-blended black */}
         <pointsMaterial
+          key={light ? 'light' : 'dark'}
           size={0.018}
-          color="#ffffff"
+          color={light ? '#000000' : '#ffffff'}
           transparent
-          opacity={0.45}
+          opacity={light ? 0.55 : 0.45}
           depthWrite={false}
-          blending={THREE.AdditiveBlending}
+          blending={light ? THREE.NormalBlending : THREE.AdditiveBlending}
         />
       </points>
     </>
@@ -194,6 +210,7 @@ function Sculpture({ intensity, accent }) {
 
 export default function Scene({ intensity = 1, accent = '#c6ff4f' }) {
   useWindowMotion();
+  const light = useIsLight();
   const reduced =
     typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -205,7 +222,7 @@ export default function Scene({ intensity = 1, accent = '#c6ff4f' }) {
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         frameloop={reduced ? 'never' : 'always'}
       >
-        <Sculpture intensity={reduced ? 0 : intensity} accent={accent} />
+        <Sculpture intensity={reduced ? 0 : intensity} accent={accent} light={light} />
       </Canvas>
     </div>
   );
